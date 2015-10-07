@@ -4,20 +4,25 @@
     ],
     "installed_packages":
     [
+        "Alignment",
         "AngularJS",
         "Case Conversion",
+        "CursorRuler",
         "DocBlockr",
         "GitGutter",
         "LESS",
         "Package Control",
         "Phpcs",
         "PlainTasks",
+        "Pretty JSON"
         "Pretty YAML",
+        "SqlBeautifier",
         "SublimeGit",
         "SublimeLinter",
         "SublimeLinter-jscs",
         "SublimeLinter-jshint",
         "Sublimerge Pro",
-        "Theme - Nexus"
+        "Theme - Nexus",
+        "Xdebug Client"
     ]
 }
