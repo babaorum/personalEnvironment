@@ -10,17 +10,11 @@ linuxInstall: linuxSublimeInstall linuxPackageControlInstall linuxSublimeSetting
 
 macInstall: macSublimeInstall macPackageControlInstall macSublimeSettings
 
-phpcs:
-	# /usr/bin/phpcs
-	sudo apt-get install -y php-codesniffer
+sublime-phpcsTools: phpcs phpmd phpcsfixer
 
-phpmd:
-	wget http://static.phpmd.org/php/latest/phpmd.phar
-	sudo chmod +x phpmd.phar && sudo mv phpmd.phar /usr/local/bin/phpmd
-
-phpcsfixer:
-	wget http://get.sensiolabs.org/php-cs-fixer.phar
-	sudo chmod +x php-cs-fixer.phar && mv php-cs-fixer.phar /usr/local/bin/php-cs-fixer
+packageConfig:
+	cp phpcs.sublime-settings $(LINUX_PATH)/Packages/User/phpcs.sublime-settings
+	cp Markdown.sublime-settings $(LINUX_PATH)/Packages/User/Markdown.sublime-settings
 
 # Linux installation part
 linuxSublimeInstall:
@@ -50,3 +44,15 @@ macPackageControlInstall:
 macSublimeSettings:
 	rm $(MAC_PATH)/Packages/User/Preferences.sublime-settings
 	cp $(CURRENT_DIR)/Preferences.sublime-settings $(MAC_PATH)/Packages/User/Preferences.sublime-settings
+
+# Sublime-phpcs installation part
+phpcs:
+	sudo apt-get install -y php-codesniffer
+
+phpmd:
+	wget http://static.phpmd.org/php/latest/phpmd.phar
+	sudo chmod +x phpmd.phar && sudo mv phpmd.phar /usr/local/bin/phpmd
+
+phpcsfixer:
+	wget http://get.sensiolabs.org/php-cs-fixer.phar
+	sudo chmod +x php-cs-fixer.phar && mv php-cs-fixer.phar /usr/local/bin/php-cs-fixer
