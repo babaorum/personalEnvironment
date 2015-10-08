@@ -3,6 +3,18 @@ LINUX_PATH  = '~/.config/sublime-text-3'
 MAC_PATH    = '~/Library/Application\ Support/Sublime\ Text\ 3'
 
 all: install
+# To test
+# ifeq !(which phpcs)
+# 	sudo apt-get install -y php-codesniffer
+# endif
+# ifeq !(which phpmd)
+# 	wget http://static.phpmd.org/php/latest/phpmd.phar
+# 	sudo chmod +x phpmd.phar && sudo mv phpmd.phar /usr/local/bin/phpmd
+# endif
+# ifeq !(which php-cs-fixer)
+# 	wget http://get.sensiolabs.org/php-cs-fixer.phar
+# 	sudo chmod +x php-cs-fixer.phar && mv php-cs-fixer.phar /usr/local/bin/php-cs-fixer
+# endif
 
 install: linuxInstall
 
@@ -15,6 +27,7 @@ sublime-phpcsTools: phpcs phpmd phpcsfixer
 packageConfig:
 	cp phpcs.sublime-settings $(LINUX_PATH)/Packages/User/phpcs.sublime-settings
 	cp Markdown.sublime-settings $(LINUX_PATH)/Packages/User/Markdown.sublime-settings
+	cp GitGutter.sublime-settings $(LINUX_PATH)/Packages/User/GitGutter.sublime-settings
 
 # Linux installation part
 linuxSublimeInstall:
